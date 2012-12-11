@@ -4,4 +4,4 @@ hardstatus ignore "%w | %h"
 hardstatus alwayslastline "[%H %20c] %`%-w%{=b bw}%n %t%{-}%+w %=[%l]"
 
 multiuser on
-acladd takehiro
+acladd hogehoge
