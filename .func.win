@@ -1,0 +1,34 @@
+function gvim () { $VIM/gvim $* & };
+
+###  http://www.sixnine.net/cygwin/cygwin-doc/alias.html  ###
+###  open explorer from prompt
+function explorer_wrapper {
+        explorer $2$(cygpath -w -a $1)
+};
+
+function e {
+    if [ $# -eq 0 ]; then
+        target=.
+    else
+        target=$1
+    fi
+    explorer_wrapper $target
+};
+
+function eh {
+    if [ $# -eq 0 ]; then
+        target=.
+    else
+        target=$1
+    fi
+    explorer_wrapper $target '/e,'
+};
+
+function er {
+    if [ $# -eq 0 ]; then
+        target=.
+    else
+        target=$1
+    fi
+    explorer_wrapper $target '/e,/root,'
+};
