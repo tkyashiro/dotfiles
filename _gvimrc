@@ -1,0 +1,8 @@
+colorscheme asu1dark
+
+set guioptions+=a
+:set clipboard+=unnamed
+
+set guifont=ゆたぽん（コーディング）BoldSl
+"set guifont=ＭＳ\ ゴシック:h10
+winsize 150 50
