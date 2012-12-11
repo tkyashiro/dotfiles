@@ -1,0 +1,14 @@
+alias ls="ls -F --color=tty"
+alias la="ls -a"
+alias ll="ls -l -h"
+alias du="du -h"
+alias du1="du --max-depth=1"
+alias date="/bin/date '+%y/%m/%d %H:%M:%S'"
+#alias gvim="gvim -geometry 150x50"
+
+alias scr="screen -xR"
+
+## typo ÂÐºö
+alias sl="ls"
+alias :wq="exit"
+alias :q="exit"
