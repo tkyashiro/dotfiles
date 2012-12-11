@@ -1,17 +1,20 @@
-# environment
-source ~/.env.linux
-#source ~/.env.win
+# environmen
+#source ~/.env.linux
+source ~/.env.win
 
 # alias
 source ~/.alias
 ## 既存コマンドの置き換え
-source ~/.func.linux
-#source ~/.func.win
+#source ~/.func.linux
+source ~/.func.win
 
 function cd() { builtin cd $@ && ls; }
 function lless () { ls -l -h $@ | less; }
 function nless() { nkf -w $@ | less; }
 function dusort() {du -k --max-depth=1 | sort -rn | less$@}
+
+alias ls='ls --color=auto'
+alias la='ls -a'
 
 # Grobal alias
 alias -g L=' | less'
@@ -53,7 +56,7 @@ precmd() {
 	newPWD=${PWD}
 	#   アクセサリをつけていく
 	promptstr="[${usernam}@${hostnam}-(mm/dd hh:mm)](${PWD})-"
-	fillsize=$(( ${COLUMNS} - ${#promptstr} ))      # プロンプト幅を計算
+	fillsize=$(( ${COLUMNS} - ${#promptstr} - 1 ))      # プロンプト幅を計算
 	if [ $fillsize -ge 0 ]
 	then
 		fill=${(l.${fillsize}.. .)}
