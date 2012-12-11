@@ -1,4 +1,4 @@
-"Last Change:2012/10/29 09:51:25.
+"Last Change:2012/12/11 20:31:41.
 
 "*****************************************************************
 " Function
@@ -258,6 +258,37 @@ au FileType hl7 :set ff=mac; e!
 autocmd BufNewFile,BufRead *.vb set ft=vbnet
 
 "*****************************************************************
+" Plugin Install - Vundle
+"*****************************************************************
+set nocompatible
+filetype off
+if has("win32") || has("win64")
+	set rtp+=~/.vim/vundle.git/
+	call vundle#rc('~/vimfiles/bundle/')
+else
+	set rtp+=~/.vim/vundle.git/
+	call vundle#rc()
+endif
+
+" Github 上のリポジトリから取得する場合 ↓の様に、Github のユーザ名とリポジトリ名を指定します。
+" Bundle 'user_name/repository_name'
+
+" vim-scripts 上のリポジトリから取得する場合 ↓の様に、plugin の名前を指定します。
+" Bundle 'script_name'
+Bundle 'FuzzyFinder'
+Bundle 'minibufexpl'
+Bundle 'DoxygenToolkit'
+Bundle 'TagExplorer'
+Bundle 'AutoComplPop'
+Bundle 'code-snippet'
+Bundle 'Align'
+
+" それ以外の git リポジトリから取得する場合
+" Bundle 'git://repository_url'
+
+filetype plugin indent on     " required!
+
+"*****************************************************************
 " Plugin Setting
 "*****************************************************************
 "---------------------------------
@@ -276,17 +307,6 @@ let g:miniBufExplMapCTabSwitchBuffs = 1
 let g:miniBufExplSplitBelow         = 0  " Put new window above
 let g:miniBufExplModSelTarget       = 1
 let g:miniBufExplSplitToEdge        = 1
-
-"---------------------------------
-" plugin closetag
-"---------------------------------
-"let g:closetag_html_style=1
-"source $HOME/.vim/macros/closetag.vim
-
-"---------------------------------
-" plubin YankRing.vim
-"---------------------------------
-nmap ,y :YRShow<CR>
 
 "---------------------------------
 " plugin DoxygetTOolkit
@@ -323,17 +343,17 @@ nnoremap <Leader><C-l> : TagExplorer<CR>
 " http://unsigned.g.hatena.ne.jp/Trapezoid/20070417/p1
 "---------------------------------
 function InsertTabWrapper()
-       if pumvisible()
-               return "\<c-n>"
-       endif
-       let col = col('.') - 1
-       if !col || getline('.')[col - 1] !~ '\k\|<\|/'
-               return "\<tab>"
-       elseif exists('&omnifunc') && &omnifunc == ''
-               return "\<c-n>"
-       else
-               return "\<c-x>\<c-o>"
-       endif
+	if pumvisible()
+		return "\<c-n>"
+	endif
+	let col = col('.') - 1
+	if !col || getline('.')[col - 1] !~ '\k\|<\|/'
+		return "\<tab>"
+	elseif exists('&omnifunc') && &omnifunc == ''
+		return "\<c-n>"
+	else
+		return "\<c-x>\<c-o>"
+	endif
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
@@ -367,7 +387,7 @@ let g:Tex_CompileRule_dvi = 'platex $*'
 let g:Tex_ViewRule_dvi = 'pxdvi'
 
 "---------------------------------
-" plubin code snippets
+" plugin code snippets
 " http://www.vim.org/scripts/scripts.php?script_id=2086
 "---------------------------------
 "let g:CodeSnippet_no_default_mappings = 1
@@ -400,5 +420,7 @@ nnoremap <unique> <silent> fm :<C-u>FufMruFile!<CR>
 
 "---------------------------------
 " plugin Align.vim 
+" http://www.vim.org/scripts/script.php?script_id=294
 "---------------------------------
 :let g:Align_xstrlen = 3
+
