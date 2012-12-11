@@ -1,4 +1,4 @@
-"Last Change:2012/12/11 20:31:41.
+"Last Change:2012/12/11 20:49:28.
 
 "*****************************************************************
 " Function
@@ -263,7 +263,7 @@ autocmd BufNewFile,BufRead *.vb set ft=vbnet
 set nocompatible
 filetype off
 if has("win32") || has("win64")
-	set rtp+=~/.vim/vundle.git/
+	set rtp+=$VIM/vimfiles/vundle.git/
 	call vundle#rc('~/vimfiles/bundle/')
 else
 	set rtp+=~/.vim/vundle.git/
