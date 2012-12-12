@@ -1,4 +1,4 @@
-"Last Change:2012/12/11 20:49:28.
+"Last Change:2012/12/12 02:36:31.
 
 "*****************************************************************
 " Function
@@ -314,8 +314,8 @@ let g:miniBufExplSplitToEdge        = 1
 let g:DoxygenToolkit_compactDoc = "yes"
 let g:DoxygenToolkit_undocTag="DOX_SKIP_BLOCK"
 " Author
-let g:DoxygenToolkit_authorName="Takehiro YASHIRO ($Author$)"
-let g:DoxygenToolkit_licenseString = "Copyright(C) 2012 KONICA MINOLTA OPTICS,INC."
+let g:DoxygenToolkit_authorName="($Author$)"
+let g:DoxygenToolkit_licenseString = "Copyright(C) 2012 ."
 let g:DoxygenToolkit_versionString = "$Rev$"
 
 " ä÷êîê‡ñæ

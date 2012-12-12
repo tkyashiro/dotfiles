@@ -3,6 +3,6 @@ colorscheme asu1dark
 set guioptions+=a
 :set clipboard+=unnamed
 
-set guifont=ゆたぽん（コーディング）BoldSl
+set guifont=ゆたぽん（コーディング）Bold:h9
 "set guifont=ＭＳ\ ゴシック:h10
 winsize 150 50
