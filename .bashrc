@@ -128,3 +128,7 @@ unset TEMP
 # Some example functions
 # function settitle() { echo -ne "\e]2;$@\a\e]1;$@\a"; }
 
+if [ -f /usr/bin/zsh ] ; then
+	exec /usr/bin/zsh
+fi
+
