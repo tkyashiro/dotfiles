@@ -1,4 +1,36 @@
-"Last Change:2012/12/12 02:36:31.
+"Last Change:2012/12/13 11:17:11.
+
+"*****************************************************************
+" Plugin Install - Vundle
+"*****************************************************************
+set nocompatible
+filetype off
+if has("win32") || has("win64")
+	set rtp+=$VIM/vimfiles/vundle.git/
+	call vundle#rc('~/vimfiles/bundle/')
+else
+	set rtp+=~/.vim/vundle.git/
+	call vundle#rc()
+endif
+
+" Github 上のリポジトリから取得する場合 ↓の様に、Github のユーザ名とリポジトリ名を指定します。
+" Bundle 'user_name/repository_name'
+
+" vim-scripts 上のリポジトリから取得する場合 ↓の様に、plugin の名前を指定します。
+" Bundle 'script_name'
+Bundle 'FuzzyFinder'
+Bundle 'minibufexpl.vim'
+Bundle 'DoxygenToolkit.vim'
+Bundle 'tagexplorer.vim'
+Bundle 'AutoComplPop'
+Bundle 'code-snippet'
+Bundle 'Align'
+Bundle 'clones/vim-l9'
+
+" それ以外の git リポジトリから取得する場合
+" Bundle 'git://repository_url'
+
+filetype plugin indent on     " required!
 
 "*****************************************************************
 " Function
@@ -257,36 +289,6 @@ au FileType hl7 :set ff=mac; e!
 "---------------------------------
 autocmd BufNewFile,BufRead *.vb set ft=vbnet
 
-"*****************************************************************
-" Plugin Install - Vundle
-"*****************************************************************
-set nocompatible
-filetype off
-if has("win32") || has("win64")
-	set rtp+=$VIM/vimfiles/vundle.git/
-	call vundle#rc('~/vimfiles/bundle/')
-else
-	set rtp+=~/.vim/vundle.git/
-	call vundle#rc()
-endif
-
-" Github 上のリポジトリから取得する場合 ↓の様に、Github のユーザ名とリポジトリ名を指定します。
-" Bundle 'user_name/repository_name'
-
-" vim-scripts 上のリポジトリから取得する場合 ↓の様に、plugin の名前を指定します。
-" Bundle 'script_name'
-Bundle 'FuzzyFinder'
-Bundle 'minibufexpl'
-Bundle 'DoxygenToolkit'
-Bundle 'TagExplorer'
-Bundle 'AutoComplPop'
-Bundle 'code-snippet'
-Bundle 'Align'
-
-" それ以外の git リポジトリから取得する場合
-" Bundle 'git://repository_url'
-
-filetype plugin indent on     " required!
 
 "*****************************************************************
 " Plugin Setting
