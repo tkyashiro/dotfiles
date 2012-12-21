@@ -1,4 +1,4 @@
-"Last Change:2012/12/13 11:17:11.
+"Last Change:2012/12/21 14:25:23.
 
 "*****************************************************************
 " Plugin Install - Vundle
@@ -26,6 +26,9 @@ Bundle 'AutoComplPop'
 Bundle 'code-snippet'
 Bundle 'Align'
 Bundle 'clones/vim-l9'
+Bundle 'syngan/vim-pukiwiki'
+Bundle 'glidenote/memolist.vim'
+Bundle 'tpope/vim-markdown'
 
 " それ以外の git リポジトリから取得する場合
 " Bundle 'git://repository_url'
@@ -160,7 +163,6 @@ set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0
-set shiftwidth=4
 set listchars=tab:>-
 set list
 
@@ -270,7 +272,7 @@ autocmd FileType c :map <C-[> <C-w>}
 " For Ruby
 "---------------------------------
 autocmd FileType ruby  :set tabstop     = 2
-autocmd FileType ruby  :set softtabstop = 2
+autocmd FileType ruby  :set softtabstop = 0
 autocmd FileType ruby  :set shiftwidth  = 2
 
 "---------------------------------
@@ -288,6 +290,14 @@ au FileType hl7 :set ff=mac; e!
 " For vbnet
 "---------------------------------
 autocmd BufNewFile,BufRead *.vb set ft=vbnet
+
+"---------------------------------
+" For markdown
+"---------------------------------
+au FileType markdown :set expandtab
+au FileType markdown :set tabstop=4
+au FileType markdown :set softtabstop=0
+au FileType markdown :set shiftwidth=4
 
 
 "*****************************************************************
@@ -418,6 +428,7 @@ nnoremap <unique> <silent> fb :<C-u>FufBuffer!<CR>
 nnoremap <unique> <silent> ff :<C-u>FufFile! <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
 nnoremap <unique> <silent> fm :<C-u>FufMruFile!<CR>
 "nnoremap <unique> <silent> <C-t> :<C-u>FufFile! <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
+nnoremap <unique> <silent> mf :FufFile <C-r>=expand(g:memolist_path."/")<CR><CR>
 
 
 "---------------------------------
@@ -425,4 +436,19 @@ nnoremap <unique> <silent> fm :<C-u>FufMruFile!<CR>
 " http://www.vim.org/scripts/script.php?script_id=294
 "---------------------------------
 :let g:Align_xstrlen = 3
+
+"---------------------------------
+" plugin Pukiwiki.vim 
+" https://github.com/syngan/vim-pukiwiki
+" ---------------------------------
+
+"---------------------------------
+" plugin Pukiwiki.vim 
+" https://github.com/syngan/vim-pukiwiki
+" ---------------------------------
+nmap mn  :MemoNew<CR>
+nmap ml  :MemoList<CR>
+nmap mg  :MemoGrep<CR>
+let g:memolist_path = "C:/Memo"
+let g:memolist_memo_date = "Created:%Y/%m/%d %H:%M - Last Change:."
 
