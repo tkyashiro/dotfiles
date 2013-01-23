@@ -1,4 +1,4 @@
-"Last Change:2012/12/21 14:25:23.
+"Last Change:2013/01/23 14:24:11.
 
 "*****************************************************************
 " Plugin Install - Vundle
@@ -27,6 +27,7 @@ Bundle 'code-snippet'
 Bundle 'Align'
 Bundle 'clones/vim-l9'
 Bundle 'syngan/vim-pukiwiki'
+Bundle 'Shougo/neocomplcache'
 Bundle 'glidenote/memolist.vim'
 Bundle 'tpope/vim-markdown'
 
@@ -354,6 +355,7 @@ nnoremap <Leader><C-l> : TagExplorer<CR>
 " plubin autocomplpop
 " http://unsigned.g.hatena.ne.jp/Trapezoid/20070417/p1
 "---------------------------------
+let g:acp_enableAtStartup = 1
 function InsertTabWrapper()
 	if pumvisible()
 		return "\<c-n>"
