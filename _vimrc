@@ -1,4 +1,4 @@
-"Last Change:2013/01/23 14:24:11.
+"Last Change:2013/01/28 12:52:34.
 
 "*****************************************************************
 " Plugin Install - Vundle
@@ -355,7 +355,7 @@ nnoremap <Leader><C-l> : TagExplorer<CR>
 " plubin autocomplpop
 " http://unsigned.g.hatena.ne.jp/Trapezoid/20070417/p1
 "---------------------------------
-let g:acp_enableAtStartup = 1
+let g:acp_enableAtStartup = 0
 function InsertTabWrapper()
 	if pumvisible()
 		return "\<c-n>"
@@ -432,7 +432,6 @@ nnoremap <unique> <silent> fm :<C-u>FufMruFile!<CR>
 "nnoremap <unique> <silent> <C-t> :<C-u>FufFile! <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
 nnoremap <unique> <silent> mf :FufFile <C-r>=expand(g:memolist_path."/")<CR><CR>
 
-
 "---------------------------------
 " plugin Align.vim 
 " http://www.vim.org/scripts/script.php?script_id=294
@@ -443,14 +442,47 @@ nnoremap <unique> <silent> mf :FufFile <C-r>=expand(g:memolist_path."/")<CR><CR>
 " plugin Pukiwiki.vim 
 " https://github.com/syngan/vim-pukiwiki
 " ---------------------------------
-
-"---------------------------------
-" plugin Pukiwiki.vim 
-" https://github.com/syngan/vim-pukiwiki
-" ---------------------------------
 nmap mn  :MemoNew<CR>
 nmap ml  :MemoList<CR>
 nmap mg  :MemoGrep<CR>
 let g:memolist_path = "C:/Memo"
 let g:memolist_memo_date = "Created:%Y/%m/%d %H:%M - Last Change:."
+
+"---------------------------------
+" plugin neocomplcache.vim 
+" https://github.com/Shougo/neocomplcache
+" ---------------------------------
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Enable Auto select 
+let g:neocomplcache_enable_auto_select = 1
+" Use smartcase.
+let g:neocomplcache_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 0
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+" Set manual completion length.
+let g:neocomplcache_manual_completion_start_length = 0
+
+" Print caching percent in statusline.
+"let g:neocomplcache_caching_percent_in_statusline = 1
+
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+            \ 'default' : '',
+            \ 'vimshell' : $HOME.'/.vimshell_hist',
+            \ 'scheme' : $HOME.'/.gosh_completions', 
+            \ 'scala' : $DOTVIM.'/dict/scala.dict', 
+            \ 'ruby' : $DOTVIM.'/dict/ruby.dict'
+            \ }
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\v\h\w*'
+"let g:neocomplcache_SnippetsDir = $HOME.'/snippets'
 
