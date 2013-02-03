@@ -4,7 +4,7 @@ source ~/.env.win
 
 # alias
 source ~/.alias
-## Šù‘¶ƒRƒ}ƒ“ƒh‚Ì’u‚«Š·‚¦
+## æ—¢å­˜ã‚³ãƒãƒ³ãƒ‰ã®ç½®ãæ›ãˆ
 #source ~/.func.linux
 source ~/.func.win
 
@@ -37,15 +37,15 @@ bindkey -e
 autoload -U compinit;
 compinit -u
 #### history
-HISTFILE="$HOME/.zhistory"      # —š—ğƒtƒ@ƒCƒ‹
-HISTSIZE=10000                  # ƒƒ‚ƒŠã‚É•Û‘¶‚³‚ê‚é $HISTFILE ‚ÌÅ‘åƒTƒCƒYH
-SAVEHIST=10000                  # •Û‘¶‚³‚ê‚éÅ‘å—š—ğ”
+HISTFILE="$HOME/.zhistory"      # å±¥æ­´ãƒ•ã‚¡ã‚¤ãƒ«
+HISTSIZE=10000                  # ãƒ¡ãƒ¢ãƒªä¸Šã«ä¿å­˜ã•ã‚Œã‚‹ $HISTFILE ã®æœ€å¤§ã‚µã‚¤ã‚ºï¼Ÿ
+SAVEHIST=10000                  # ä¿å­˜ã•ã‚Œã‚‹æœ€å¤§å±¥æ­´æ•°
 
 #### option, limit, bindkey
 setopt pushd_ignore_dups
-setopt  hist_ignore_all_dups    # Šù‚ÉƒqƒXƒgƒŠ‚É‚ ‚éƒRƒ}ƒ“ƒhs‚ÍŒÃ‚¢•û‚ğíœ
-setopt  hist_reduce_blanks      # ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì—]Œv‚ÈƒXƒy[ƒX‚ğ”rœ
-setopt  share_history           # ƒqƒXƒgƒŠ‚Ì‹¤—L
+setopt  hist_ignore_all_dups    # æ—¢ã«ãƒ’ã‚¹ãƒˆãƒªã«ã‚ã‚‹ã‚³ãƒãƒ³ãƒ‰è¡Œã¯å¤ã„æ–¹ã‚’å‰Šé™¤
+setopt  hist_reduce_blanks      # ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®ä½™è¨ˆãªã‚¹ãƒšãƒ¼ã‚¹ã‚’æ’é™¤
+setopt  share_history           # ãƒ’ã‚¹ãƒˆãƒªã®å…±æœ‰
 
 ## PROMPT
 ### http://homepage1.nifty.com/blankspace/zsh/zsh.html
@@ -54,9 +54,9 @@ precmd() {
 	hostnam=${HOST##.*}     # wildcard, not regex!
 	usernam=$(whoami)
 	newPWD=${PWD}
-	#   ƒAƒNƒZƒTƒŠ‚ğ‚Â‚¯‚Ä‚¢‚­
+	#   ã‚¢ã‚¯ã‚»ã‚µãƒªã‚’ã¤ã‘ã¦ã„ã
 	promptstr="[${usernam}@${hostnam}-(mm/dd hh:mm)](${PWD})-"
-	fillsize=$(( ${COLUMNS} - ${#promptstr} - 1 ))      # ƒvƒƒ“ƒvƒg•‚ğŒvZ
+	fillsize=$(( ${COLUMNS} - ${#promptstr} - 1 ))      # ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆå¹…ã‚’è¨ˆç®—
 	if [ $fillsize -ge 0 ]
 	then
 		fill=${(l.${fillsize}.. .)}

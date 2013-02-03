@@ -13,10 +13,10 @@ else
 	call vundle#rc()
 endif
 
-" Github ã‚ÌƒŠƒ|ƒWƒgƒŠ‚©‚çæ“¾‚·‚éê‡ «‚Ì—l‚ÉAGithub ‚Ìƒ†[ƒU–¼‚ÆƒŠƒ|ƒWƒgƒŠ–¼‚ğw’è‚µ‚Ü‚·B
+" Github ÂÃ£Â‚ÃŒÂƒÂŠÂƒ|ÂƒWÂƒgÂƒÂŠÂ‚Â©Â‚Ã§ÂÃ¦Â“Â¾Â‚Â·Â‚Ã©ÂÃªÂÂ‡ ÂÂ«Â‚ÃŒÂ—lÂ‚Ã‰ÂAGithub Â‚ÃŒÂƒÂ†Â[ÂƒUÂ–Â¼Â‚Ã†ÂƒÂŠÂƒ|ÂƒWÂƒgÂƒÂŠÂ–Â¼Â‚Ã°ÂwÂ’Ã¨Â‚ÂµÂ‚ÃœÂ‚Â·ÂB
 " Bundle 'user_name/repository_name'
 
-" vim-scripts ã‚ÌƒŠƒ|ƒWƒgƒŠ‚©‚çæ“¾‚·‚éê‡ «‚Ì—l‚ÉAplugin ‚Ì–¼‘O‚ğw’è‚µ‚Ü‚·B
+" vim-scripts ÂÃ£Â‚ÃŒÂƒÂŠÂƒ|ÂƒWÂƒgÂƒÂŠÂ‚Â©Â‚Ã§ÂÃ¦Â“Â¾Â‚Â·Â‚Ã©ÂÃªÂÂ‡ ÂÂ«Â‚ÃŒÂ—lÂ‚Ã‰ÂAplugin Â‚ÃŒÂ–Â¼Â‘OÂ‚Ã°ÂwÂ’Ã¨Â‚ÂµÂ‚ÃœÂ‚Â·ÂB
 " Bundle 'script_name'
 Bundle 'FuzzyFinder'
 Bundle 'minibufexpl.vim'
@@ -31,7 +31,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'glidenote/memolist.vim'
 Bundle 'tpope/vim-markdown'
 
-" ‚»‚êˆÈŠO‚Ì git ƒŠƒ|ƒWƒgƒŠ‚©‚çæ“¾‚·‚éê‡
+" Â‚Â»Â‚ÃªÂˆÃˆÂŠOÂ‚ÃŒ git ÂƒÂŠÂƒ|ÂƒWÂƒgÂƒÂŠÂ‚Â©Â‚Ã§ÂÃ¦Â“Â¾Â‚Â·Â‚Ã©ÂÃªÂÂ‡
 " Bundle 'git://repository_url'
 
 filetype plugin indent on     " required!
@@ -40,7 +40,7 @@ filetype plugin indent on     " required!
 " Function
 "*****************************************************************
 "---------------------------------
-" ‚¸‚ñwiki (Encoding)
+" Â‚Â¸Â‚Ã±wiki (Encoding)
 "---------------------------------
 if &encoding !=# 'utf-8'
        set encoding=japan
@@ -49,12 +49,12 @@ set fileencoding=japan
 if has('iconv')
        let s:enc_euc = 'euc-jp'
        let s:enc_jis = 'iso-2022-jp'
-       " iconv‚ªJISX0213‚É‘Î‰‚µ‚Ä‚¢‚é‚©‚ğƒ`ƒFƒbƒN
+       " iconvÂ‚ÂªJISX0213Â‚Ã‰Â‘ÃÂ‰ÂÂ‚ÂµÂ‚Ã„Â‚Â¢Â‚Ã©Â‚Â©Â‚Ã°Âƒ`ÂƒFÂƒbÂƒN
        if iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
                let s:enc_euc = 'euc-jisx0213'
                let s:enc_jis = 'iso-2022-jp-3'
        endif
-       " fileencodings‚ğ\’z
+       " fileencodingsÂ‚Ã°Â\Â’z
        if &encoding ==# 'utf-8'
                let s:fileencodings_default = &fileencodings
                let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
@@ -77,7 +77,7 @@ if has('iconv')
 endif
 
 "---------------------------------
-" •¶šƒR[ƒh‚ğÅIs‚É’Ç‰Á
+" Â•Â¶ÂÂšÂƒRÂ[ÂƒhÂ‚Ã°ÂÃ…ÂIÂsÂ‚Ã‰Â’Ã‡Â‰Ã
 " thanks to http://hatena.g.hatena.ne.jp/hatenatech/20060515/1147682761
 "---------------------------------
 function! GetB()
@@ -110,9 +110,9 @@ func! String2Hex(str)
 endfunc
 
 "*****************************************************************
-" C++ƒRƒ}ƒ“ƒh
+" C++ÂƒRÂƒ}ÂƒÂ“Âƒh
 "*****************************************************************
-"let g:inserttag="HOGE" ‚µ‚ÄAƒRƒƒ“ƒg‚ğ•ÏX‚·‚é
+"let g:inserttag="HOGE" Â‚ÂµÂ‚Ã„ÂAÂƒRÂƒÂÂƒÂ“ÂƒgÂ‚Ã°Â•ÃÂXÂ‚Â·Â‚Ã©
 function InsertComment()
 	let s:space = " "
 	let s:ccomment = "//"
@@ -134,7 +134,7 @@ inoremap <C-c> <c-r>=InsertComment()<CR>
 
 syntax on
 "---------------------------------
-" ŒŸõŠÖ˜A
+" ÂŒÂŸÂÃµÂŠÃ–Â˜A
 "---------------------------------
 set ignorecase
 set smartcase
@@ -142,7 +142,7 @@ set incsearch
 
 
 "---------------------------------
-" •\¦ŠÖ˜A
+" Â•\ÂÂ¦ÂŠÃ–Â˜A
 "---------------------------------
 set sm
 set autoindent
@@ -158,7 +158,7 @@ set nowrap
 set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=[%{GetB()}]\ %l,%c%V%8P
 
 "---------------------------------
-" tab ŠÖ˜A
+" tab ÂŠÃ–Â˜A
 "---------------------------------
 set noexpandtab
 set tabstop=4
@@ -168,24 +168,24 @@ set listchars=tab:>-
 set list
 
 "---------------------------------
-" ˆóüŠÖ˜A
+" ÂˆÃ³ÂÃ¼ÂŠÃ–Â˜A
 "---------------------------------
 set printoptions=wrap:y
 set printoptions=number:y
 set printoptions=syntax:n
 
 "---------------------------------
-" ‚»‚Ì‘¼
+" Â‚Â»Â‚ÃŒÂ‘Â¼
 "---------------------------------
 set backspace=indent,eol,start
 set nobackup
-set backupdir=$vim/backup
+"set backupdir=$vim/backup
 let autodate_format='%Y/%m/%d %H:%M:%S'
 set laststatus=2
 set showcmd
 
 "---------------------------------
-" “®ìİ’è
+" Â“Â®ÂÃ¬ÂÃÂ’Ã¨
 "---------------------------------
 if has("autochdir")
   set autochdir
@@ -331,7 +331,7 @@ let g:DoxygenToolkit_authorName="($Author$)"
 let g:DoxygenToolkit_licenseString = "Copyright(C) 2012 ."
 let g:DoxygenToolkit_versionString = "$Rev$"
 
-" ŠÖ”à–¾
+" ÂŠÃ–ÂÂ”ÂÃ Â–Â¾
 let g:DoxygenToolkit_startCommentTag = "/*! "
 let g:DoxygenToolkit_startCommentBlock = "/*! "
 let g:DoxygenToolkit_paramTag_pre = "@param[in/out] "
@@ -394,10 +394,10 @@ set grepprg=grep\ -nH\ $*
 "filetype indent on
 " Enabled before
 
-" Še©‚ÌŠÂ‹«‚É‡‚í‚¹‚½ .tex ƒtƒ@ƒCƒ‹‚ğ dvi
-" ƒtƒ@ƒCƒ‹‚ÉƒRƒ“ƒpƒCƒ‹‚·‚éƒRƒ}ƒ“ƒh‚ÉC“K‹X’u‚«Š·‚¦‚Ä‚­‚¾‚³‚¢D (Vine Linux 3.1 ‚Ìê‡)
+" ÂŠeÂÂ©Â‚ÃŒÂŠÃ‚Â‹Â«Â‚Ã‰ÂÂ‡Â‚Ã­Â‚Â¹Â‚Â½ .tex ÂƒtÂƒ@ÂƒCÂƒÂ‹Â‚Ã° dvi
+" ÂƒtÂƒ@ÂƒCÂƒÂ‹Â‚Ã‰ÂƒRÂƒÂ“ÂƒpÂƒCÂƒÂ‹Â‚Â·Â‚Ã©ÂƒRÂƒ}ÂƒÂ“ÂƒhÂ‚Ã‰ÂCÂ“KÂ‹XÂ’uÂ‚Â«ÂŠÂ·Â‚Â¦Â‚Ã„Â‚Â­Â‚Â¾Â‚Â³Â‚Â¢ÂD (Vine Linux 3.1 Â‚ÃŒÂÃªÂÂ‡)
 let g:Tex_CompileRule_dvi = 'platex $*'
-" “¯—l‚ÉCdvi ƒtƒ@ƒCƒ‹‚Ìƒrƒ…[ƒ[
+" Â“Â¯Â—lÂ‚Ã‰ÂCdvi ÂƒtÂƒ@ÂƒCÂƒÂ‹Â‚ÃŒÂƒrÂƒÂ…Â[ÂƒÂÂ[
 let g:Tex_ViewRule_dvi = 'pxdvi'
 
 "---------------------------------
