@@ -1,4 +1,4 @@
-alias ls="ls -F --color=tty"
+#alias ls="ls -F --color=tty"
 alias la="ls -a"
 alias ll="ls -l -h"
 alias du="du -h"
