@@ -1,20 +1,18 @@
-# environmen
-#source ~/.env.linux
-source ~/.env.win
 
 # alias
+#alias ls='ls --color=auto'
+alias ls='ls -G'
+alias la='ls -a'
 source ~/.alias
 ## 既存コマンドの置き換え
 #source ~/.func.linux
-source ~/.func.win
+#source ~/.func.win
 
 function cd() { builtin cd $@ && ls; }
 function lless () { ls -l -h $@ | less; }
 function nless() { nkf -w $@ | less; }
 function dusort() {du -k --max-depth=1 | sort -rn | less$@}
 
-alias ls='ls --color=auto'
-alias la='ls -a'
 
 # Grobal alias
 alias -g L=' | less'

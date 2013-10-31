@@ -132,3 +132,7 @@ if [ -f /usr/bin/zsh ] ; then
 	exec /usr/bin/zsh
 fi
 
+if [ -f /bin/zsh ] ; then
+	exec /bin/zsh
+fi
+

@@ -445,7 +445,11 @@ nnoremap <unique> <silent> mf :FufFile <C-r>=expand(g:memolist_path."/")<CR><CR>
 nmap mn  :MemoNew<CR>
 nmap ml  :MemoList<CR>
 nmap mg  :MemoGrep<CR>
-let g:memolist_path = "C:/Memo"
+if has("win32") || has("win64")
+	let g:memolist_path = "C:/Memo"
+else
+	let g:memolist_path = "~/Memo"
+endif
 let g:memolist_memo_date = "Created:%Y/%m/%d %H:%M - Last Change:."
 
 "---------------------------------
